@@ -62,8 +62,8 @@ jobs:
       - name: List all containers
         run: docker ps -a
 
-      - name: Logs from user-service
-        run: docker-compose logs user-service
+      - name: Show live logs from user-service
+        run: docker-compose logs -f user-service &
 
       - name: Show Docker Compose Logs
         run: docker-compose logs
