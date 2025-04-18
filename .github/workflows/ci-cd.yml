@@ -59,6 +59,11 @@ jobs:
           docker-compose down  # Stop any running containers
           docker-compose up -d  # Deploy the service using Docker Compose
 
-      - name: Health Check for User Service
+      - name: Show Docker Compose Logs
+        run: docker-compose logs
+
+      - name: Wait for user-service to be ready
         run: |
-          curl --fail http://localhost:8082/roles/hello  # Health check to ensure the service is running
+          for i in {1..10}; do
+            curl --fail http://localhost:8082/roles/hello && break || sleep 5
+          done
