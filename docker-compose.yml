@@ -1,6 +1,6 @@
 services:
   eureka-server:
-    image: dockerakash18/eureka:$GITHUB_SHA
+    image: dockerakash18/eureka:latest
     build:
       context: ./eureka  # Path to your Eureka Server project
     ports:
@@ -9,7 +9,7 @@ services:
       - app-network
 
   user-service:
-    image: dockerakash18/user-service:$GITHUB_SHA
+    image: dockerakash18/user-service:latest
     build:
       context: ./user-service  # Path to your User Service code
     ports:
