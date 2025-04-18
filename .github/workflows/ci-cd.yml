@@ -22,7 +22,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Build User Service
-        run: mvn clean package -DskipTests  /user-service
+        run: mvn clean package -DskipTests  --file user-service/pom.xml
 
       - name: Build Docker image for User Service
         run: docker build -t user-service:$GITHUB_SHA .
