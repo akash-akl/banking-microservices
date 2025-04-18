@@ -15,6 +15,7 @@ public class RoleController {
     @GetMapping("/hello")
     public String getHello(@RequestHeader(value = "x-trace-Id", required = false) String traceId){
         log.info("traceId:: {}",traceId);
+        log.info("traceId:: {}",traceId);
         return "Hello";
     }
 }
