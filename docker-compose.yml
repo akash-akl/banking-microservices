@@ -16,7 +16,7 @@ services:
       - "8082:8082"
     environment:
       #- SPRING_PROFILES_ACTIVE=
-      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka/
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8760/eureka/
     depends_on:
       - eureka-server
     networks:
