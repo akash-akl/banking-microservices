@@ -62,16 +62,6 @@ jobs:
       - name: List all containers
         run: docker ps -a
 
-      - name: Wait for eureka-server
-        run: |
-          for i in {1..20}; do
-            curl --fail http://localhost:8760 || sleep 3
-            echo "Waiting for Eureka..." || true
-          done
-
-      - name: Show Docker Compose Logs
-        run: docker-compose logs -f eureka &
-
       - name: Show live logs from user-service
         run: docker-compose logs -f user-service &
 
