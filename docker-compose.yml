@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   eureka-server:
-    image: eureka-server
+    image: ${{ secrets.DOCKER_USERNAME }}/eureka:$GITHUB_SHA
     build:
       context: ./eureka  # Path to your Eureka Server project
     ports:
@@ -11,7 +11,7 @@ services:
       - app-network
 
   user-service:
-    image: user-service:$GITHUB_SHA
+    image: ${{ secrets.DOCKER_USERNAME }}/user-service:$GITHUB_SHA
     build:
       context: ./user-service  # Path to your User Service code
     ports:
