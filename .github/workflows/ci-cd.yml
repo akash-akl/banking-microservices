@@ -61,4 +61,4 @@ jobs:
 
       - name: Health Check for User Service
         run: |
-          curl --fail http://localhost:8080/users/hello  # Health check to ensure the service is running
+          curl --fail http://localhost:8082/users/hello  # Health check to ensure the service is running
