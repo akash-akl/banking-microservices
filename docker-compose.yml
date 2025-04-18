@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   eureka-server:
     image: dockerakash18/eureka:$GITHUB_SHA
