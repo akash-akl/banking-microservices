@@ -16,10 +16,10 @@ jobs:
         uses: actions/checkout@v2  # Check out the code from the repo
 
       - name: Set up JDK 17
-        uses: actions/setup-java@v2  # Set up JDK 17
+        uses: actions/setup-java@v3
         with:
-          java-version: 17
-          distribution: adoptopenjdk
+          java-version: '17'
+          distribution: 'temurin'
 
       - name: Build User Service
         run: mvn clean package -DskipTests  # Build the User Service
