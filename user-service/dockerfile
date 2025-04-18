@@ -6,5 +6,5 @@ RUN mvn clean package -DskipTests
 
 # Use a lightweight OpenJDK 17 image to run the app
 FROM openjdk:17-jdk-slim
-COPY --from=build /app/target/user-service.jar /app/user-service.jar
-ENTRYPOINT ["java", "-jar", "/app/user-service.jar"]
+COPY --from=build /app/target/user-service-1.0.jar /app/user-service-1.0.jar
+ENTRYPOINT ["java", "-jar", "/app/user-service-1.0.jar"]
