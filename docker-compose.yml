@@ -4,7 +4,7 @@ services:
     build:
       context: ./eureka  # Path to your Eureka Server project
     ports:
-      - "8761:8761"
+      - "8760:8760"
     networks:
       - app-network
 
