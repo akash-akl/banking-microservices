@@ -59,6 +59,12 @@ jobs:
           docker-compose down  # Stop any running containers
           docker-compose up -d  # Deploy the service using Docker Compose
 
+      - name: List all containers
+        run: docker ps -a
+
+      - name: Logs from user-service
+        run: docker-compose logs user-service
+
       - name: Show Docker Compose Logs
         run: docker-compose logs
 
